@@ -4,7 +4,7 @@
  * @Github: https://github.com/xiaoqiujun
  * @date: Do not edit
  * @LastEditors: xiaoqiujun
- * @LastEditTime: 2022-03-08 18:39:54
+ * @LastEditTime: 2022-03-09 11:45:31
  * @FilePath: \funtool\src\string.ts
  */
 
@@ -37,7 +37,7 @@ export const is = (v: any): boolean => {
  *      empty([]) => false
  */
 export const empty = (v: string): boolean => {
-    if(!is(v)) throw new TypeError("v must be a string")
+    if(!is(v)) throw new TypeError("Expected a string")
     else return v === ''
 }
 
@@ -53,7 +53,7 @@ export const empty = (v: string): boolean => {
  */
 export const toInt = (v:string|number): number => {
     if(Int.is(v)) return v as number
-    if(!is(v)) throw new TypeError("v must be a string or number")
+    if(!is(v)) throw new TypeError("Expected a string or number")
     return Number(v)
 }
 
