@@ -1,2 +1,0 @@
-!function(e,o){"object"==typeof exports&&"object"==typeof module?module.exports=o():"function"==typeof define&&define.amd?define([],o):"object"==typeof exports?exports.funtool=o():e.funtool=o()}(this,(function(){return(()=>{"use strict";var e={};return(()=>{var o=e;Object.defineProperty(o,"__esModule",{value:!0}),o.sum=void 0,o.sum=(e,o)=>e+o})(),e})()}));
-//# sourceMappingURL=funtool.js.map

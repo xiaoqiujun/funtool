@@ -4,11 +4,11 @@
  * @Github: https://github.com/xiaoqiujun
  * @date: Do not edit
  * @LastEditors: xiaoqiujun
- * @LastEditTime: 2022-03-09 11:45:31
+ * @LastEditTime: 2022-03-10 16:05:59
  * @FilePath: \funtool\src\string.ts
  */
 
-import { toString } from "./init";
+import {isString} from './lang';
 import * as Int from './int';
 
 /**
@@ -22,7 +22,7 @@ import * as Int from './int';
  *      is([]) => false
  */
 export const is = (v: any): boolean => {
-	return toString.call(v) === "[object String]";
+	return isString(v);
 }
 
 
@@ -37,7 +37,7 @@ export const is = (v: any): boolean => {
  *      empty([]) => false
  */
 export const empty = (v: string): boolean => {
-    if(!is(v)) throw new TypeError("Expected a string")
+    if(!is(v)) return false
     else return v === ''
 }
 
@@ -183,4 +183,21 @@ export const firstLower = (str: string): string => {
 export const firstUpper = (str: string): string => {
 	str = ltrim(str) //去掉左边的空格
 	return toUpperCase(str.slice(0, 1)) + str.slice(1)
+}
+
+/**
+ *@description 将字符串进行反序输出
+ *
+ * @param {string} v 要返回其自身反序的操作
+ * @return {string}   返回一个字符串
+ * @example reverse("abcdef") => "fedcba"
+ */
+export const reverse = (v:string):string => {
+	if(!isString(v)) return ''
+	const arr:Array<string> = v.split('')
+	let result:string = ''
+	for (let i: number = arr.length - 1; i >= 0; i--) {
+		result += arr[i]
+	}
+	return result
 }
