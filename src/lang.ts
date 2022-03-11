@@ -4,7 +4,7 @@
  * @Github: https://github.com/xiaoqiujun
  * @date: Do not edit
  * @LastEditors: xiaoqiujun
- * @LastEditTime: 2022-03-10 16:19:46
+ * @LastEditTime: 2022-03-11 11:48:09
  * @FilePath: \funtool\src\lang.ts
  */
 

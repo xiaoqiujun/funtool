@@ -4,7 +4,7 @@
  * @Github: https://github.com/xiaoqiujun
  * @date: Do not edit
  * @LastEditors: xiaoqiujun
- * @LastEditTime: 2022-03-10 16:37:57
+ * @LastEditTime: 2022-03-11 14:28:00
  * @FilePath: \funtool\src\date.ts
  */
 
@@ -34,7 +34,7 @@ export const format = (date: Date, format: string = "-"): string => {
 /**
  * @description 显示友好时间  今天/一天前/一周前/一个月前/一年前
  * @param date 时间戳
- * @returns {string}  
+ * @returns {string}
  */
 export const timeSpan = (date: number): string => {
 	let minute: number = 1000 * 60;
@@ -59,40 +59,41 @@ export const timeSpan = (date: number): string => {
  * @returns {number}
  */
 export const getTime = (): number => {
-	return Math.round(new Date().getTime() / 1000)
-}
+	return Math.round(new Date().getTime() / 1000);
+};
 
 /**
  * @description 把秒数转化为天、时、分、秒
  * @param {number} 参数value是秒数
- * @returns {string} 
+ * @returns {string}
  */
- export const formatSeconds = (value:number):string => {
-	let second:number = Math.floor(value) // 秒
-	let minute:number = 0 // 分
-	let hour:number = 0 // 小时
-	let day:number = 0 // 天
-	var result = ''
+export const formatSeconds = (value: number): string => {
+	let second: number = Math.floor(value); // 秒
+	let minute: number = 0; // 分
+	let hour: number = 0; // 小时
+	let day: number = 0; // 天
+	var result = "";
 	if (value < 60) {
-		return `${second}秒`
+		return `${second}秒`;
 	}
-	if(second >= 60) {	// 如果秒数大于60，将秒数转换成整数
-		minute = second / 60		//算出分 1分钟60秒
-		second = second % 60		//算出剩余秒数
+	if (second >= 60) {
+		// 如果秒数大于60，将秒数转换成整数
+		minute = second / 60; //算出分 1分钟60秒
+		second = second % 60; //算出剩余秒数
 	}
-	if(minute >= 60) {
-		hour = minute / 60	//算出小时
-		minute = minute % 60	//求出剩余分钟
+	if (minute >= 60) {
+		hour = minute / 60; //算出小时
+		minute = minute % 60; //求出剩余分钟
 	}
-	if(hour >= 24) {
-		day = hour / 24	//算出天数
-		hour = hour % 24	//求剩余小时
+	if (hour >= 24) {
+		day = hour / 24; //算出天数
+		hour = hour % 24; //求剩余小时
 	}
-	
-	if(second > 0) result = `${second >= 10 ? second : `0${second}`}秒`
-	if(minute > 0) result = `${minute >= 10 ? minute : `0${minute}`}分` + result
-	if(hour > 0) result = `${hour >= 10 ? hour : `0${hour}`}小时` + result
-	if(day > 0) result = `${day >= 10 ? day : `0${day}`}天` + result
-	
-	return result
-}
+
+	if (second > 0) result = `${second >= 10 ? second : `0${second}`}秒`;
+	if (minute > 0) result = `${minute >= 10 ? minute : `0${minute}`}分` + result;
+	if (hour > 0) result = `${hour >= 10 ? hour : `0${hour}`}小时` + result;
+	if (day > 0) result = `${day >= 10 ? day : `0${day}`}天` + result;
+
+	return result;
+};
