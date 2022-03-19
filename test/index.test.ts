@@ -2,8 +2,8 @@
 import {
     isNumber,
     isObject,
-} from "../src/lang"
-import * as Str from '../src/string';
+} from "../src/internal/lang"
+import Str from '../src/string';
 describe("test", () => {
     it("isNumber", () => {
         expect(isNumber(1)).toBe(true);
