@@ -2,8 +2,8 @@
   "name": "funtool",
   "version": "0.1.0",
   "description": "funtool是一个JS工具类库，提高工作效率，对数组，对象，字符串等原生功能进行封装",
-  "main": "funtool.js",
-  "module": "funtool.esm.js",
+  "main": "index.js",
+  "module": "index.js",
   "typings": "*.d.ts",
   "scripts": {
     "dev": "set NODE_ENV=developemnt && rollup -c rollup.config.js -w",

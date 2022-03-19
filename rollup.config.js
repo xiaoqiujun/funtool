@@ -24,7 +24,7 @@ const plugins = [
 		exclude: 'node_modules/**',
 	}),
 ]
-const modules = ['array', 'dates', 'index', 'int', 'object', 'string'].map(key => {
+const modules = ['array', 'dates', 'index', 'int', 'object', 'string', 'lang'].map(key => {
 	return {
 		input: `./src/${key}.ts`,
 		output: {
