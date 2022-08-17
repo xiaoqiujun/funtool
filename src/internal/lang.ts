@@ -4,8 +4,8 @@
  * @Github: https://github.com/xiaoqiujun
  * @date: Do not edit
  * @LastEditors: xiaoqiujun
- * @LastEditTime: 2022-03-11 11:48:09
- * @FilePath: \funtool\src\lang.ts
+ * @LastEditTime: 2022-08-17 14:46:54
+ * @FilePath: \funtool\src\internal\lang.ts
  */
 
 const NUMBER_TAG = "[object Number]";
@@ -576,10 +576,12 @@ export const parseQuery = (obj: Record<any, any>): string => {
  * @return {*}  {*} 返回一个对象
  * @example urlParse("http:127.0.0.1:8080?type=1&id=123&name=zhangsan") => {url: "http:127.0.0.1:8080", type: "1", id: "123", name: "zhangsan"}
  */
-export const urlParse = (url: string): Record<any, any> | string => {
-	let urlObj: Record<any, any> = {};
+export const urlParse = (url: string): Record<string, any> => {
+	let urlObj: Record<string, any> = {};
 	let split: Array<string> = url.split("?");
-	if (split.length === 1) return split[0];
+	if (split.length === 1) return {
+		url:split[0]
+	};
 	if (split.length === 2) {
 		urlObj["url"] = split[0];
 		let param: Array<string> = split[1].split("&");
